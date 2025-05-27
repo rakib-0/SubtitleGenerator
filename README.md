@@ -3,7 +3,7 @@
 > 🌟 Automatically generate and translate subtitles for your videos using AI!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![OpenAI Whisper](https://img.shields.io/badge/OpenAI-Whisper-green.svg)](https://github.com/openai/whisper)
 
 ## ✨ Features
@@ -21,7 +21,7 @@
 
 ### Prerequisites
 
-- 🐍 Python 3.8 or higher
+- 🐍 Python 3.9 or higher
 - 🎵 FFmpeg
 - 🎮 CUDA-compatible GPU (optional, for faster processing)
 
